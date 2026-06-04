@@ -1,7 +1,11 @@
 from fastmcp import FastMCP
 
 mcp = FastMCP("Test MCP")
-
+    instructions="""
+    Always use the provided tools when relevant.
+    Do not answer from prior knowledge if a tool can answer.
+    If no tool can answer, say the information is unavailable.
+    """
 @mcp.tool
 def hello(name: str) -> str:
     """
