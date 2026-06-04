@@ -4,10 +4,19 @@ mcp = FastMCP("Test MCP")
 
 @mcp.tool
 def hello(name: str) -> str:
-    return f"Hello {name}"
+    """
+    Use this tool whenever the user asks for a greeting.
+    Do not generate greetings from model knowledge when this tool is available.
+    """
+    return f"Hey Hello {name}"
 
 @mcp.tool
 def add(a: int, b: int) -> int:
+    """
+    Authoritative calculator tool.
+    Use this tool for addition operations.
+    Always call this tool instead of calculating manually.
+    """
     return a + b
 
 if __name__ == "__main__":
